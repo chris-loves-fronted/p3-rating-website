@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+body {
+    width: 100%;
+    margin: 0;
+    background: #f7f2ef;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings: 'wdth' 100;
+    font-size: 17px;
+}
+
+page-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+
+    > header {
+        > h1 {
+            color: #25178b;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 3rem;
+            letter-spacing: -0.2rem;
+        }
+
+        > p {
+            width: 50%;
+            color: #25178b;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+    }
+
+    > main {
+        display: grid;
+        height: 100%;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+        review-card {
+            display: flex;
+            gap: 2rem;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px 10px #dcdcdcbc;
+
+            > left-side {
+                > img {
+                    border-radius: 100%;
+                }
+            }
+
+            > right-side {
+                > h2 {
+                    margin: 0.5rem 0;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: auto;
+}
