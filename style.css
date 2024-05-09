@@ -51,7 +51,7 @@ page-wrapper {
         column-gap: 1rem;
 
         review-card {
-            -webkit-column-break-inside: avoid;
+            break-inside: avoid;
             display: flex;
             gap: 2rem;
             height: max-content;
@@ -68,8 +68,16 @@ page-wrapper {
             }
 
             > right-side {
-                > h2 {
-                    margin: 0.5rem 0;
+                width: 100%;
+
+                > rating-containter {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 50px;
+                    > h2 {
+                        margin: 0;
+                    }
                 }
             }
         }
@@ -100,6 +108,7 @@ footer {
                 padding: 1rem 0;
                 text-transform: uppercase;
                 font-weight: 900;
+                cursor: pointer;
             }
         }
     }

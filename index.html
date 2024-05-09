@@ -23,24 +23,31 @@
             <footer>
                 <h2>Add a Review</h2>
 
-                <form action="">
+                <form>
                     <label for="rating">Your Rating</label>
                     <rating-box>
-                        <input type="radio" name="one-star" id="one-star" value="1" checked />
+                        <input type="radio" name="rating" id="one-star" value="1" required />
                         <label for="one-star">1 Star</label>
-                        <input type="radio" name="two-star" id="two-star" value="2" />
-                        <label for="two-star">2 Stars</label>
-                        <input type="radio" name="three-star" id="three-star" value="3" />
-                        <label for="two-star">3 Stars</label>
-                        <input type="radio" name="four-star" id="four-star" />
-                        <label for="two-star">4 Stars</label>
-                    </rating-box>
-                    <label for="name">Full Name</label>
-                    <input type="text" name="name" id="name" />
-                    <label for="review">Review</label>
-                    <textarea name="review" id="review" cols="30" rows="10"></textarea>
 
-                    <button>Submit Review</button>
+                        <input type="radio" name="rating" id="two-star" value="2" />
+                        <label for="two-star">2 Stars</label>
+
+                        <input type="radio" name="rating" id="three-star" value="3" />
+                        <label for="two-star">3 Stars</label>
+
+                        <input type="radio" name="rating" id="four-star" value="4" />
+                        <label for="two-star">4 Stars</label>
+
+                        <input type="radio" name="rating" id="five-star" value="5" />
+                        <label for="two-star">5 Stars</label>
+                    </rating-box>
+
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name" required />
+                    <label for="review">Review</label>
+                    <textarea name="review" id="review" cols="30" rows="10" required></textarea>
+
+                    <button type="submit" id="submitButton">Submit Review</button>
                 </form>
             </footer>
         </page-wrapper>
