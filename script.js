@@ -1,10 +1,15 @@
 // @ts-nocheck
+const addReviewH2 = document.getElementById('addReview');
 const reviewGrid = document.querySelector('main');
+
+const reviewModalBox = document.querySelector('modal-box');
+const reviewModalCloseBtn = document.getElementById('closeButton');
+const reviewForm = document.querySelector('form');
 const ratingButtons = document.querySelectorAll('input[name="rating"]');
 const reviewNameInput = document.getElementById('name');
 const reviewInput = document.getElementById('review');
 const submitButton = document.getElementById('submitButton');
-const reviewForm = document.querySelector('form');
+
 let newReview = {};
 
 let reviews = [
@@ -52,15 +57,19 @@ let reviews = [
     },
 ];
 window.addEventListener('DOMContentLoaded', () => {
+    addReviewH2.addEventListener('click', () => {
+        reviewModalBox.style.display = 'flex';
+    });
+
     for (const review of reviews) {
         const reviewCard = document.createElement('review-card');
         const leftSide = document.createElement('left-side');
         const rightSide = document.createElement('right-side');
         const userImage = document.createElement('img');
-        const userName = document.createElement('h2');
+        const userName = document.createElement('h3');
         const userReview = document.createElement('p');
         const reviewStarContainer = document.createElement('div');
-        const ratingContainer = document.createElement('rating-containter');
+        const ratingContainer = document.createElement('rating-container');
 
         reviewCard.setAttribute('data-id', String(review.id));
 
@@ -87,9 +96,18 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+    window.onclick = ({ target }) => {
+        if (target == reviewModalBox) {
+            reviewModalBox.style.display = 'none';
+        }
+    };
+    reviewModalCloseBtn.addEventListener('click', () => {
+        reviewModalBox.style.display = 'none';
+    });
+
     ratingButtons.forEach((rating) => {
-        rating.addEventListener('click', () => {
-            newReview.rating = rating.value;
+        rating.addEventListener('click', ({ target: { value } }) => {
+            newReview.rating = value;
         });
     });
 
@@ -114,6 +132,7 @@ window.addEventListener('DOMContentLoaded', () => {
         reviewNameInput.value = '';
         reviewInput.value = '';
         reviewGrid.innerHTML = '';
+        reviewModalBox.style.display = 'none';
         newReview = {};
 
         for (const review of reviews) {
@@ -121,10 +140,10 @@ window.addEventListener('DOMContentLoaded', () => {
             const leftSide = document.createElement('left-side');
             const rightSide = document.createElement('right-side');
             const userImage = document.createElement('img');
-            const userName = document.createElement('h2');
+            const userName = document.createElement('h3');
             const userReview = document.createElement('p');
             const reviewStarContainer = document.createElement('div');
-            const ratingContainer = document.createElement('rating-containter');
+            const ratingContainer = document.createElement('rating-container');
 
             reviewCard.setAttribute('data-id', String(review.id));
 
