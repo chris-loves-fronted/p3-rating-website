@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { API } from './api/API.js';
 import { UI } from './ui/UI.js';
 
